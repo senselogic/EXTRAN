@@ -1,0 +1,234 @@
+<meta charset="utf-8">
+<style>
+    *
+    {
+        padding : 0;
+        margin : 0;
+    }
+
+    table
+    {
+        border-collapse : collapse;
+    }
+</style>
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <textarea id="OldText" placeholder="Old text" style="width:49vw;height:40vh"></textarea>
+            </td>
+            <td>
+                <textarea id="NewText" placeholder="New text" style="width:49vw;height:40vh"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="LinePrefix" type="text" placeholder="Line prefix" style="width:49vw;height:5vh"/>
+            </td>
+            <td>
+                <input id="LineSuffix" type="text" placeholder="Line suffix" style="width:49vw;height:5vh"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="PhrasePrefix" type="text" placeholder="Phrase prefix" style="width:49vw;height:5vh"/>
+            </td>
+            <td>
+                <input id="PhraseSuffix" type="text" placeholder="Phrase suffix" style="width:49vw;height:5vh"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="OldIdentifier" type="text" placeholder="Old identifier" style="width:49vw;height:5vh"/>
+            </td>
+            <td>
+                <input id="NewIdentifier" type="text" placeholder="New identifier" style="width:49vw;height:5vh"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea id="OldPhraseArray" placeholder="Old phrases" style="width:49vw;height:40vh"></textarea>
+            </td>
+            <td>
+                <textarea id="NewPhraseArray" placeholder="New phrases" style="width:49vw;height:40vh"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Extract()" style="font-size:2vh">Extract</button>
+                <button onclick="Integrate()" style="font-size:2vh">Integrate</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    function GetPartArray(
+        line,
+        line_prefix,
+        line_suffix,
+        phrase_prefix,
+        phrase_suffix
+        )
+    {
+        if ( line_prefix !== "" )
+        {
+            if ( line.startsWith( line_prefix ) )
+            {
+                line = line.substring( line_prefix.length );
+            }
+            else
+            {
+                return [];
+            }
+        }
+
+        if ( line_suffix !== "" )
+        {
+            if ( line.endsWith( line_suffix ) )
+            {
+                line = line.substring( 0, line.length - line_suffix.length );
+            }
+            else
+            {
+                return [];
+            }
+        }
+
+        if ( phrase_prefix !== "" )
+        {
+            phrase_prefix_character_index = line.indexOf( phrase_prefix );
+
+            if ( phrase_prefix_character_index >= 0 )
+            {
+                phrase_prefix = line.substring( 0, phrase_prefix_character_index + phrase_prefix.length );
+                line = line.substring( phrase_prefix.length );
+            }
+            else
+            {
+                return [];
+            }
+        }
+
+        if ( phrase_suffix !== "" )
+        {
+            phrase_suffix_character_index = line.indexOf( phrase_suffix );
+
+            if ( phrase_suffix_character_index >= 0 )
+            {
+                phrase_suffix = line.substring( phrase_suffix_character_index );
+                line = line.substring( 0, phrase_suffix_character_index );
+            }
+            else
+            {
+                return [];
+            }
+        }
+
+        return [ line_prefix + phrase_prefix, line, phrase_suffix + line_suffix ];
+    }
+
+    // ~~
+
+    function Extract()
+    {
+        var
+            line_prefix,
+            line_suffix,
+            old_line,
+            old_line_array,
+            old_line_index,
+            old_part_array,
+            old_phrase_array,
+            phrase_prefix,
+            phrase_suffix;
+
+        old_line_array = document.getElementById( "OldText" ).value.split( "\n" );
+
+        line_prefix = document.getElementById( "LinePrefix" ).value;
+        line_suffix = document.getElementById( "LineSuffix" ).value;
+
+        phrase_prefix = document.getElementById( "PhrasePrefix" ).value;
+        phrase_suffix = document.getElementById( "PhraseSuffix" ).value;
+
+        old_phrase_array = [];
+
+        for ( old_line_index = 0;
+              old_line_index < old_line_array.length;
+              ++old_line_index )
+        {
+            old_line = old_line_array[ old_line_index ];
+            old_part_array = GetPartArray( old_line, line_prefix, line_suffix, phrase_prefix, phrase_suffix );
+
+            if ( old_part_array.length == 3 )
+            {
+                old_phrase_array.push( old_part_array[ 1 ] );
+            }
+        }
+
+        document.getElementById( "OldPhraseArray" ).value = old_phrase_array.join( "\n" );
+    }
+
+    // ~~
+
+    function Integrate()
+    {
+        var
+            line_prefix,
+            line_suffix,
+            new_line,
+            new_line_array,
+            new_identifier,
+            new_phrase_array,
+            new_phrase_index,
+            old_identifier,
+            old_line,
+            old_line_array,
+            old_line_index,
+            old_part_array,
+            old_phrase_array,
+            phrase_prefix,
+            phrase_suffix;
+
+        old_line_array = document.getElementById( "OldText" ).value.split( "\n" );
+        new_line_array = [];
+
+        line_prefix = document.getElementById( "LinePrefix" ).value;
+        line_suffix = document.getElementById( "LineSuffix" ).value;
+
+        phrase_prefix = document.getElementById( "PhrasePrefix" ).value;
+        phrase_suffix = document.getElementById( "PhraseSuffix" ).value;
+
+        old_identifier = document.getElementById( "OldIdentifier" ).value;
+        new_identifier = document.getElementById( "NewIdentifier" ).value;
+
+        old_phrase_array = document.getElementById( "OldPhraseArray" ).value.split( "\n" );
+        new_phrase_array = document.getElementById( "NewPhraseArray" ).value.split( "\n" );
+
+        new_phrase_index = 0;
+
+        for ( old_line_index = 0;
+              old_line_index < old_line_array.length;
+              ++old_line_index )
+        {
+            old_line = old_line_array[ old_line_index ];
+            old_part_array = GetPartArray( old_line, line_prefix, line_suffix, phrase_prefix, phrase_suffix );
+
+            new_line_array.push( old_line );
+
+            if ( old_part_array.length == 3
+                 && new_phrase_index < new_phrase_array.length )
+            {
+                new_line
+                    = old_part_array[ 0 ].split( old_identifier ).join( new_identifier )
+                      + new_phrase_array[ new_phrase_index ]
+                      + old_part_array[ 2 ].split( old_identifier ).join( new_identifier );
+
+                new_line_array.push( new_line );
+
+                ++new_phrase_index;
+            }
+        }
+
+        document.getElementById( "NewText" ).value = new_line_array.join( "\n" );
+    }
+</script>
