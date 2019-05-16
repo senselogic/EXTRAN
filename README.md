@@ -1,4 +1,4 @@
-![](https://github.com/senselogic/EXTRAN/blob/master/LOGO/extrans.png)
+![](https://github.com/senselogic/EXTRAN/blob/master/LOGO/extran.png)
 
 # Extran
 
