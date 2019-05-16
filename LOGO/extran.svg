@@ -13,9 +13,9 @@
    version="1.1"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    xml:space="preserve"
-   width="736.72864"
-   height="774.71899"
-   viewBox="0 0 736.72872 774.71895"
+   width="1367.0052"
+   height="1600.2661"
+   viewBox="0 0 1367.0054 1600.266"
    sodipodi:docname="extran.svg"
    inkscape:export-filename="/home/eric/data/WORK/PROJECT/TOOL/EXTRAN/LOGO/extran.png"
    inkscape:export-xdpi="90"
@@ -37,41 +37,42 @@
      inkscape:window-height="1056"
      id="namedview4"
      showgrid="true"
-     inkscape:zoom="0.89001172"
-     inkscape:cx="312.31927"
-     inkscape:cy="367.96046"
+     inkscape:zoom="0.22250293"
+     inkscape:cx="360.30266"
+     inkscape:cy="910.81725"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     fit-margin-top="40"
-     fit-margin-left="40"
-     fit-margin-right="40"
-     fit-margin-bottom="40"
+     fit-margin-top="80"
+     fit-margin-left="80"
+     fit-margin-right="80"
+     fit-margin-bottom="80"
      showguides="false"><inkscape:grid
        type="xygrid"
        id="grid3748"
        spacingx="15.000001"
        spacingy="30"
-       originx="-249.70573"
-       originy="-542.78097" /></sodipodi:namedview><g
+       originx="-209.70578"
+       originy="79.32784" /></sodipodi:namedview><g
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="title"
      style="display:inline"
-     transform="translate(-799.26451,-237.02456)"><text
+     transform="translate(-759.2645,-33.586342)"><text
    transform="scale(0.94703571,1.0559264)"
-   style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.12587357px;line-height:0%;font-family:Times;-inkscape-font-specification:Times-Roman;writing-mode:lr-tb;display:inline;fill:#0075bf;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.92715615"
+   style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.44830322px;line-height:0%;font-family:Times;-inkscape-font-specification:Times-Roman;writing-mode:lr-tb;display:inline;fill:#0075bf;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.70402539"
    id="text24"
-   x="871.16925"
-   y="920.27582"><tspan
-     x="871.16925"
+   x="858.57361"
+   y="1471.5537"><tspan
+     x="858.57361"
      sodipodi:role="line"
      id="tspan28"
-     y="920.27582"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:197.79330444px;line-height:1.25;font-family:'URW Gothic L';-inkscape-font-specification:'URW Gothic L';fill:#0075bf;fill-opacity:1;stroke-width:0.92715615"><tspan
-   style="fill:#ff8301;fill-opacity:1"
+     y="1471.5537"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:363.52539062px;line-height:1.25;font-family:'URW Gothic L';-inkscape-font-specification:'URW Gothic L';fill:#0075bf;fill-opacity:1;stroke-width:1.70402539"><tspan
+   style="fill:#ff8301;fill-opacity:1;stroke-width:1.70402539"
    id="tspan1230">EX</tspan>TRAN</tspan></text>
+
 
 
 
@@ -86,7 +87,7 @@
 
 <g
    id="g1466"
-   transform="translate(-49.430048)"><path
+   transform="matrix(2.1929616,0,0,2.1929616,-1226.1963,-493.91788)"><path
      style="fill:#e07100;fill-opacity:1"
      id="path841"
      d="m 1414.5589,504.52456 h -77.031 c -0.611,-37.438 -5.782,-73.616 -14.771,-105.694 h 50.518 c 4.143,0 7.5,-3.357 7.5,-7.5 0,-4.143 -3.357,-7.5 -7.5,-7.5 h -55.112 c -8.018,-24.165 -18.316,-45.521 -30.553,-62.656 -2.408,-3.371 -7.093,-4.153 -10.462,-1.745 -3.371,2.407 -4.152,7.092 -1.745,10.462 10.618,14.868 19.688,33.199 26.965,53.939 h -77.809 v -69.306 c 0,-4.143 -3.357,-7.5 -7.5,-7.5 -4.143,0 -7.5,3.357 -7.5,7.5 v 69.306 h -77.81 c 7.277,-20.74 16.347,-39.071 26.965,-53.939 2.407,-3.37 1.626,-8.055 -1.745,-10.462 -3.372,-2.407 -8.055,-1.625 -10.462,1.745 -12.237,17.135 -22.535,38.492 -30.553,62.656 h -55.112 c -4.143,0 -7.5,3.357 -7.5,7.5 0,4.143 3.357,7.5 7.5,7.5 h 50.518 c -8.988,32.078 -14.159,68.256 -14.771,105.694 h -77.03 c -4.143,0 -7.5,3.357 -7.5,7.5 0,4.143 3.357,7.5 7.5,7.5 h 77.031 c 0.611,37.438 5.782,73.616 14.771,105.694 h -50.519 c -4.143,0 -7.5,3.357 -7.5,7.5 0,4.143 3.357,7.5 7.5,7.5 h 55.112 c 8.019,24.169 18.32,45.529 30.56,62.666 1.464,2.049 3.77,3.142 6.11,3.142 1.508,0 3.031,-0.454 4.353,-1.397 3.37,-2.408 4.151,-7.092 1.744,-10.463 -10.621,-14.869 -19.693,-33.204 -26.972,-53.947 h 77.81 v 69.305 c 0,4.143 3.357,7.5 7.5,7.5 4.143,0 7.5,-3.357 7.5,-7.5 v -69.306 h 77.81 c -7.278,20.744 -16.351,39.078 -26.972,53.947 -2.407,3.371 -1.626,8.055 1.744,10.463 1.321,0.943 2.844,1.397 4.353,1.397 2.341,0 4.646,-1.093 6.11,-3.142 12.24,-17.137 22.54,-38.497 30.56,-62.666 h 55.112 c 4.143,0 7.5,-3.357 7.5,-7.5 0,-4.143 -3.357,-7.5 -7.5,-7.5 h -50.519 c 8.989,-32.078 14.16,-68.256 14.771,-105.694 h 77.031 c 4.143,0 7.5,-3.357 7.5,-7.5 0,-4.143 -3.357,-7.499 -7.5,-7.499 z m -107.36,-105.694 c 9.313,31.683 14.695,67.958 15.326,105.694 h -97.966 v -105.694 z m -180.28,0 h 82.64 v 105.694 h -97.966 c 0.632,-37.737 6.013,-74.011 15.326,-105.694 z m 0,226.388 c -9.313,-31.683 -14.695,-67.958 -15.326,-105.694 h 97.966 v 105.694 z m 180.28,0 h -82.64 v -105.694 h 97.966 c -0.632,37.737 -6.013,74.012 -15.326,105.694 z"
