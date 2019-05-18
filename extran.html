@@ -10,6 +10,13 @@
     {
         border-collapse : collapse;
     }
+
+    textarea
+    {
+        overflow : scroll;
+        resize : none;
+        white-space: pre;
+    }
 </style>
 <table>
     <tbody>
@@ -65,7 +72,7 @@
         </tr>
         <tr>
             <td>
-                <textarea id="OldTranslatedText" placeholder="Old translated text" onInput="SetRowCount( this )" style="width:24.5vw;height:50vh"></textarea>
+                <textarea id="OldTranslatedText" placeholder="Old translated text" readonly onInput="SetRowCount( this )" style="width:24.5vw;height:50vh"></textarea>
             </td>
             <td>
                 <textarea id="NewTranslatedText1" placeholder="New translated text" onInput="SetRowCount( this )" style="width:24.5vw;height:50vh"></textarea>
@@ -118,6 +125,10 @@
         phrase_suffix
         )
     {
+        var
+            phrase_prefix_character_index,
+            phrase_suffix_character_index;
+
         if ( line_prefix !== "" )
         {
             if ( line.startsWith( line_prefix ) )
@@ -355,6 +366,8 @@
                         else
                         {
                             alert( "Invalid line count : " + new_phrase_array_array[ language_index ].length );
+
+                            return;
                         }
                     }
                 }
