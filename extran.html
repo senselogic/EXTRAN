@@ -43,76 +43,94 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <input id="OldIdentifier" type="text" placeholder="Old identifier" style="width:24.5vw;height:5vh"/>
+            <td colspan="2">
+                <input id="OldIdentifier" type="text" placeholder="Old identifier" style="width:49vw;height:5vh"/>
             </td>
-            <td>
-                <input id="NewIdentifier1" type="text" placeholder="New identifier" style="width:24.5vw;height:5vh"/>
-            </td>
-            <td>
-                <input id="NewIdentifier2" type="text" placeholder="New identifier" style="width:24.5vw;height:5vh"/>
-            </td>
-            <td>
-                <input id="NewIdentifier3" type="text" placeholder="New identifier" style="width:24.5vw;height:5vh"/>
+            <td colspan="2">
+                <input id="NewIdentifier0" type="text" placeholder="New identifier" style="width:49vw;height:5vh"/>
+                <input id="NewIdentifier1" type="text" placeholder="New identifier" style="width:49vw;height:5vh;display:none"/>
+                <input id="NewIdentifier2" type="text" placeholder="New identifier" style="width:49vw;height:5vh;display:none"/>
+                <input id="NewIdentifier3" type="text" placeholder="New identifier" style="width:49vw;height:5vh;display:none"/>
             </td>
         </tr>
         <tr>
-            <td>
-                <input id="OldLineOffset" type="text" placeholder="" readonly style="width:24.5vw;height:5vh"/>
+            <td colspan="2">
+                <input id="OldLineOffset" type="text" placeholder="" readonly style="width:49vw;height:5vh"/>
             </td>
-            <td>
-                <input id="NewLineOffset1" type="text" placeholder="New line offset" style="width:24.5vw;height:5vh"/>
-            </td>
-            <td>
-                <input id="NewLineOffset2" type="text" placeholder="New line offset" style="width:24.5vw;height:5vh"/>
-            </td>
-            <td>
-                <input id="NewLineOffset3" type="text" placeholder="New line offset" style="width:24.5vw;height:5vh"/>
+            <td colspan="2">
+                <input id="NewLineOffset0" type="text" placeholder="New line offset" style="width:49vw;height:5vh"/>
+                <input id="NewLineOffset1" type="text" placeholder="New line offset" style="width:49vw;height:5vh;display:none"/>
+                <input id="NewLineOffset2" type="text" placeholder="New line offset" style="width:49vw;height:5vh;display:none"/>
+                <input id="NewLineOffset3" type="text" placeholder="New line offset" style="width:49vw;height:5vh;display:none"/>
             </td>
         </tr>
         <tr>
-            <td>
-                <textarea id="OldTranslatedText" placeholder="Old translated text" readonly onInput="SetRowCount( this )" style="width:24.5vw;height:50vh"></textarea>
+            <td colspan="2">
+                <textarea id="OldTranslation" placeholder="Old translated text" readonly onInput="SetRowCount( this )" style="width:49vw;height:50vh"></textarea>
             </td>
-            <td>
-                <textarea id="NewTranslatedText1" placeholder="New translated text" onInput="SetRowCount( this )" style="width:24.5vw;height:50vh"></textarea>
-            </td>
-            <td>
-                <textarea id="NewTranslatedText2" placeholder="New translated text" onInput="SetRowCount( this )" style="width:24.5vw;height:50vh"></textarea>
-            </td>
-            <td>
-                <textarea id="NewTranslatedText3" placeholder="New translated text" onInput="SetRowCount( this )" style="width:24.5vw;height:50vh"></textarea>
+            <td colspan="2">
+                <textarea id="NewTranslation0" placeholder="New translated text" onInput="SetRowCount( this )" style="width:49vw;height:50vh"></textarea>
+                <textarea id="NewTranslation1" placeholder="New translated text" onInput="SetRowCount( this )" style="width:49vw;height:50vh;display:none"></textarea>
+                <textarea id="NewTranslation2" placeholder="New translated text" onInput="SetRowCount( this )" style="width:49vw;height:50vh;display:none"></textarea>
+                <textarea id="NewTranslation3" placeholder="New translated text" onInput="SetRowCount( this )" style="width:49vw;height:50vh;display:none"></textarea>
             </td>
         </tr>
         <tr>
-            <td>
-                <input id="OldRowCount" placeholder="0" readonly style="width:24.5vw;height:5vh"/>
+            <td colspan="2">
+                <input id="OldRowCount" placeholder="0" readonly style="width:49vw;height:5vh"/>
             </td>
-            <td>
-                <input id="NewRowCount1" placeholder="0" readonly style="width:24.5vw;height:5vh"/>
-            </td>
-            <td>
-                <input id="NewRowCount2" placeholder="0" readonly style="width:24.5vw;height:5vh"/>
-            </td>
-            <td>
-                <input id="NewRowCount3" placeholder="0" readonly style="width:24.5vw;height:5vh"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button onclick="Extract()" style="font-size:2vh">Extract</button>
-                <button onclick="Integrate()" style="font-size:2vh">Integrate</button>
+            <td colspan="2">
+                <input id="NewRowCount0" placeholder="0" readonly style="width:49vw;height:5vh"/>
+                <input id="NewRowCount1" placeholder="0" readonly style="width:49vw;height:5vh;display:none"/>
+                <input id="NewRowCount2" placeholder="0" readonly style="width:49vw;height:5vh;display:none"/>
+                <input id="NewRowCount3" placeholder="0" readonly style="width:49vw;height:5vh;display:none"/>
             </td>
         </tr>
     </tbody>
 </table>
+<button onclick="Extract()" style="font-size:1.5vw">Extract</button>
+<button onclick="Integrate()" style="font-size:1.5vw">Integrate</button>
+<input id="Translation0" type="radio" name="translation" onClick="ShowTranslation( 0 )">
+<label for="Translation0" style="font-size:1.5vw">First translation</label>
+<input id="Translation1" type="radio" name="translation" onClick="ShowTranslation( 1 )">
+<label for="Translation1" style="font-size:1.5vw">Second translation</label>
+<input id="Translation2" type="radio" name="translation" onClick="ShowTranslation( 2 )">
+<label for="Translation2" style="font-size:1.5vw">Third translation</label>
+<input id="Translation3" type="radio" name="translation" onClick="ShowTranslation( 3 )">
+<label for="Translation3" style="font-size:1.5vw">Fourth translation</label>
 <script>
     function SetRowCount(
         phrase_array
         )
     {
-        document.getElementById( phrase_array.id.split( "TranslatedText" ).join( "RowCount" ) ).value
+        document.getElementById( phrase_array.id.split( "Translation" ).join( "RowCount" ) ).value
             = phrase_array.value.split( "\n" ).length;
+    }
+
+    // ~~
+
+    function ShowTranslation(
+        shown_translation_index
+        )
+    {
+        for ( translation_index = 0;
+              translation_index < 4;
+              ++translation_index )
+        {
+            if ( translation_index === shown_translation_index )
+            {
+                display_value = "inline";
+            }
+            else
+            {
+                display_value = "none";
+            }
+
+            document.getElementById( "NewIdentifier" + translation_index ).style.display = display_value;
+            document.getElementById( "NewLineOffset" + translation_index ).style.display = display_value;
+            document.getElementById( "NewTranslation" + translation_index ).style.display = display_value;
+            document.getElementById( "NewRowCount" + translation_index ).style.display = display_value;
+        }
     }
 
     // ~~
@@ -198,7 +216,7 @@
             old_line_index,
             old_part_array,
             old_phrase_array,
-            old_translated_text_element,
+            old_translation_element,
             phrase_prefix,
             phrase_suffix;
 
@@ -225,10 +243,10 @@
             }
         }
 
-        old_translated_text_element = document.getElementById( "OldTranslatedText" );
-        old_translated_text_element.value = old_phrase_array.join( "\n" );
+        old_translation_element = document.getElementById( "OldTranslation" );
+        old_translation_element.value = old_phrase_array.join( "\n" );
 
-        SetRowCount( old_translated_text_element );
+        SetRowCount( old_translation_element );
     }
 
     // ~~
@@ -252,7 +270,7 @@
     function Integrate()
     {
         var
-            language_index,
+            new_translation_index,
             line_prefix,
             line_suffix,
             new_line,
@@ -262,15 +280,15 @@
             new_line_offset_array,
             new_identifier_array,
             new_phrase_array_array,
-            phrase_index,
-            new_translated_text_array,
+            new_translation_array,
             old_identifier,
             old_line,
             old_line_array,
             old_line_index,
             old_part_array,
             old_phrase_array,
-            old_translated_text,
+            old_translation,
+            phrase_index,
             phrase_prefix,
             phrase_suffix;
 
@@ -286,6 +304,7 @@
         old_identifier = document.getElementById( "OldIdentifier" ).value;
         new_identifier_array
             = [
+                  document.getElementById( "NewIdentifier0" ).value,
                   document.getElementById( "NewIdentifier1" ).value,
                   document.getElementById( "NewIdentifier2" ).value,
                   document.getElementById( "NewIdentifier3" ).value
@@ -293,25 +312,28 @@
 
         new_line_offset_array
             = [
+                  document.getElementById( "NewLineOffset0" ).value,
                   document.getElementById( "NewLineOffset1" ).value,
                   document.getElementById( "NewLineOffset2" ).value,
                   document.getElementById( "NewLineOffset3" ).value
               ];
 
-        old_translated_text = document.getElementById( "OldTranslatedText" ).value;
-        new_translated_text_array
+        old_translation = document.getElementById( "OldTranslation" ).value;
+        new_translation_array
             = [
-                  document.getElementById( "NewTranslatedText1" ).value,
-                  document.getElementById( "NewTranslatedText2" ).value,
-                  document.getElementById( "NewTranslatedText3" ).value
+                  document.getElementById( "NewTranslation0" ).value,
+                  document.getElementById( "NewTranslation1" ).value,
+                  document.getElementById( "NewTranslation2" ).value,
+                  document.getElementById( "NewTranslation3" ).value
               ];
 
-        old_phrase_array = old_translated_text.split( "\n" );
+        old_phrase_array = old_translation.split( "\n" );
         new_phrase_array_array
             = [
-                  new_translated_text_array[ 0 ].split( "\n" ),
-                  new_translated_text_array[ 1 ].split( "\n" ),
-                  new_translated_text_array[ 2 ].split( "\n" )
+                  new_translation_array[ 0 ].split( "\n" ),
+                  new_translation_array[ 1 ].split( "\n" ),
+                  new_translation_array[ 2 ].split( "\n" ),
+                  new_translation_array[ 3 ].split( "\n" )
               ];
 
         phrase_index = 0;
@@ -327,16 +349,16 @@
 
             if ( old_part_array.length == 3 )
             {
-                for ( language_index = 0;
-                      language_index < 3;
-                      ++language_index )
+                for ( new_translation_index = 0;
+                      new_translation_index < 4;
+                      ++new_translation_index )
                 {
-                    if ( new_translated_text_array[ language_index ] !== "" )
+                    if ( new_translation_array[ new_translation_index ] !== "" )
                     {
-                        if ( phrase_index < new_phrase_array_array[ language_index ].length
-                             && new_phrase_array_array[ language_index ].length === old_phrase_array.length )
+                        if ( phrase_index < new_phrase_array_array[ new_translation_index ].length
+                             && new_phrase_array_array[ new_translation_index ].length === old_phrase_array.length )
                         {
-                            new_line_offset = new_line_offset_array[ language_index ];
+                            new_line_offset = new_line_offset_array[ new_translation_index ];
 
                             if ( new_line_offset === "" )
                             {
@@ -348,9 +370,9 @@
                             }
 
                             new_line
-                                = old_part_array[ 0 ].split( old_identifier ).join( new_identifier_array[ language_index ] )
-                                  + new_phrase_array_array[ language_index ][ phrase_index ]
-                                  + old_part_array[ 2 ].split( old_identifier ).join( new_identifier_array[ language_index ] );
+                                = old_part_array[ 0 ].split( old_identifier ).join( new_identifier_array[ new_translation_index ] )
+                                  + new_phrase_array_array[ new_translation_index ][ phrase_index ]
+                                  + old_part_array[ 2 ].split( old_identifier ).join( new_identifier_array[ new_translation_index ] );
 
                             new_line_array.splice(
                                 new_line_index + new_line_offset,
@@ -365,7 +387,9 @@
                         }
                         else
                         {
-                            alert( "Invalid line count : " + new_phrase_array_array[ language_index ].length );
+                            document.getElementById( "Translation" + new_translation_index ).click();
+
+                            alert( "Invalid line count : " + new_phrase_array_array[ new_translation_index ].length );
 
                             return;
                         }
@@ -380,4 +404,6 @@
 
         document.getElementById( "NewText" ).value = new_line_array.join( "\n" );
     }
+
+    document.getElementById( "Translation0" ).click();
 </script>
