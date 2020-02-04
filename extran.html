@@ -88,8 +88,9 @@
         </tr>
     </tbody>
 </table>
-<button onclick="Extract()" style="font-size:1.5vw">Extract</button>
-<button onclick="Integrate()" style="font-size:1.5vw">Integrate</button>
+<button onclick="ExtractPhrases()" style="font-size:1.5vw">Extract</button>
+<button onclick="ReplacePhrases()" style="font-size:1.5vw">Replace</button>
+<button onclick="AddPhrases()" style="font-size:1.5vw">Add</button>
 <input id="Translation0" type="radio" name="translation" onClick="ShowTranslation( 0 )">
 <label for="Translation0" style="font-size:1.5vw">First translation</label>
 <input id="Translation1" type="radio" name="translation" onClick="ShowTranslation( 1 )">
@@ -99,6 +100,8 @@
 <input id="Translation3" type="radio" name="translation" onClick="ShowTranslation( 3 )">
 <label for="Translation3" style="font-size:1.5vw">Fourth translation</label>
 <script>
+    // -- FUNCTIONS
+
     function SetRowCount(
         phrase_array
         )
@@ -206,7 +209,8 @@
 
     // ~~
 
-    function Extract()
+    function ExtractPhrases(
+        )
     {
         var
             line_prefix,
@@ -267,7 +271,9 @@
 
     // ~~
 
-    function Integrate()
+    function IntegratePhrases(
+        old_line_is_replaced = false
+        )
     {
         var
             new_translation_index,
@@ -349,6 +355,13 @@
 
             if ( old_part_array.length == 3 )
             {
+                if ( old_line_is_replaced )
+                {
+                    new_line_array.splice( new_line_index, 1 );
+
+                    --new_line_index;
+                }
+
                 for ( new_translation_index = 0;
                       new_translation_index < 4;
                       ++new_translation_index )
@@ -404,6 +417,24 @@
 
         document.getElementById( "NewText" ).value = new_line_array.join( "\n" );
     }
+
+    // ~~
+
+    function ReplacePhrases(
+        )
+    {
+        IntegratePhrases( true );
+    }
+
+    // ~~
+
+    function AddPhrases(
+        )
+    {
+        IntegratePhrases( false );
+    }
+
+    // -- STATEMENTS
 
     document.getElementById( "Translation0" ).click();
 </script>
