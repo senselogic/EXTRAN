@@ -146,13 +146,15 @@
 <button onclick="ExtractPhrases()" style="font-size:1.5vw">Extract</button>
 <button onclick="ReplacePhrases()" style="font-size:1.5vw">Replace</button>
 <button onclick="AddPhrases()" style="font-size:1.5vw">Add</button>
-<input id="Translation0" type="radio" name="translation" onClick="ShowTranslation( 0 )">
+<input id="Lowercase" type="checkbox" name="Lowercase" style="font-size:1.5vw"/>
+<label for="Lowercase">Lowercase</label>
+<input id="Translation0" type="radio" name="Translation" onClick="ShowTranslation( 0 )"/>
 <label for="Translation0" style="font-size:1.5vw">First translation</label>
-<input id="Translation1" type="radio" name="translation" onClick="ShowTranslation( 1 )">
+<input id="Translation1" type="radio" name="Translation" onClick="ShowTranslation( 1 )"/>
 <label for="Translation1" style="font-size:1.5vw">Second translation</label>
-<input id="Translation2" type="radio" name="translation" onClick="ShowTranslation( 2 )">
+<input id="Translation2" type="radio" name="Translation" onClick="ShowTranslation( 2 )"/>
 <label for="Translation2" style="font-size:1.5vw">Third translation</label>
-<input id="Translation3" type="radio" name="translation" onClick="ShowTranslation( 3 )">
+<input id="Translation3" type="radio" name="Translation" onClick="ShowTranslation( 3 )"/>
 <label for="Translation3" style="font-size:1.5vw">Fourth translation</label>
 <script>
     // -- FUNCTIONS
@@ -488,6 +490,11 @@
 
                                     break;
                                 }
+                            }
+
+                            if ( document.getElementById( "Lowercase" ).checked )
+                            {
+                                new_phrase = new_phrase.toLowerCase();
                             }
 
                             new_line
